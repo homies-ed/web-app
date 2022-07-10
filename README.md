@@ -1,2 +1,3 @@
-# web-app
-Repozytorium produkcyjne - aplikacja webowa HOMIES 
+# Aplikacja webowa HOMIES
+
+Repozytorium produkcyjne
