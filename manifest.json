@@ -1,0 +1,14 @@
+{
+    "short_name": "HOMIES",
+    "name": "HOMIES",
+    "icons": [],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "",
+    "background_color": "",
+    "prefer_related_applications": false,
+    "orientation": "portrait-primary",
+    "description": "",
+    "scope": ".",
+    "id": ""
+}
