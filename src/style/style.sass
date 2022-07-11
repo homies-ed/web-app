@@ -1,0 +1,260 @@
+@import ../service/module
+
+//  Table of contents:
+    - Global
+    - Utilities
+    - Headings
+    - Buttons
+    - Menu
+    - Pages
+    - Zbieranina
+    - Form
+    - Inputs
+    - Social media login
+    - Settings
+
+// Global:    
+*
+    @include reset-defaults
+    user-select: none
+
+html
+    font-family: 'Roboto', sans-serif 
+    font-size: $base 
+    font-weight: $normal
+
+// Utilitties:
+.link
+    @include use-hypertext
+    font-weight: $bold
+
+.break 
+    @include break($size: big) 
+
+.tile-break
+    @include break($size: small)  
+
+// Headings:
+.heading
+    @include heading($role: primary)
+
+.secondary-heading 
+    @include heading($role: secondary)
+
+.greeting
+    font-size: $base * 9/4
+
+.tertiary-heading 
+    @include heading($role: tertiary) 
+
+.topics-heading
+    @include heading($role: primary)
+    text-align: center
+
+.documents-heading
+    @include heading($role: primary)
+    margin-top: $base * 3
+    margin-bottom: $base 
+
+.settings-heading
+    @include heading($role: primary)
+    align-self: flex-start
+    margin-top: $base * 6
+    margin-left: $base * 3/2
+
+.options-heading
+    @include heading($role: tertiary)
+    margin: $base * 3 $base * 7/4 $base * 1/2 $base 
+
+// Buttons:
+.button 
+    @include button
+    @include be-clickable
+
+    &:hover
+        cursor: pointer 
+
+.start-button, .login-button 
+    width: $wide
+
+.start-button
+    position: relative
+    top: $base * 3
+
+// Menu:
+.menu 
+    @include fixed-menu
+
+.menu-item 
+    padding: $base
+    color: $white 
+
+// Pages:
+.start, .login, .signup
+    @include display-fullscreen
+    @include center-vertically
+    justify-content: space-evenly
+
+.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery, .planer, .grade-choice, .topics, .documents
+    @include center-vertically
+    overflow: hidden
+    margin-bottom: $base * 6
+
+.topics
+    margin-top: $base * 4
+
+.quote
+    text-align: center
+    max-width: $wide
+
+.back-zbieranina
+    @include back-icon($page: zbieranina)
+
+.back-settings
+    @include back-icon($page: settings)
+
+// Zbieranina:
+.subject-tiles
+    @include side-container
+
+.tile
+    @include tile
+
+.tile-image, .documents-image
+    border-top-left-radius: $rounded-image
+    border-top-right-radius: $rounded-image
+
+.small-tile
+    @include small-tile
+
+.small-tile-image
+    border-top-left-radius: $rounded-image
+    border-bottom-left-radius: $rounded-image
+
+.subject-name
+    text-align: center
+    font-size: $base * 5/4
+    font-weight: $semi-bold
+    padding: $base * 3/4 $base * 2
+
+.lesson-name
+    margin: $base * 5/4
+    font-weight: $semi-bold
+
+.topics-image
+    border-radius: $base * 5/4
+    border: 2px solid $black
+    margin: $base 0 
+
+.item
+    @include lay-vertically
+    border-radius: $rounded-image
+    background: $light-blue
+    border: 1px solid $black 
+    margin: $base * 1/4 
+
+.item-info
+    @include lay-vertically
+    padding: $base * 1/2
+
+.item-name
+    font-size: $base 
+    font-weight: $semi-bold
+    margin: $base * 1/4
+
+.tag 
+    @include tag
+
+.documents-image 
+    border-bottom: 1px solid $black 
+
+.documents-container
+    display: flex
+    flex-wrap: wrap 
+    width: $wide * 9/8
+
+// Form:
+.form, .confirmation
+    @include center-vertically
+
+.password-tooltip 
+    @include be-clickable
+    font-size: $base * 3/4
+    align-self: flex-end
+    margin-right: $base
+
+.checkbox-container
+    margin: $base * 3/2
+    line-height: 150%
+    text-align: center
+
+.checkbox
+    margin: $base * 1/2
+    
+.checkbox-label
+    @include be-clickable
+
+.help-message
+    text-align: center
+
+// Inputs:
+.input 
+    @include input
+
+.password-input 
+    @include lay-vertically
+
+.password-login
+    @include be-clickable  
+    font-family: 'Roboto', sans-serif  
+    line-height: $base
+    border: none 
+
+.password-bar
+    display: flex
+    align-items: center
+    padding: 0 $base
+
+.visibility-icon
+    transform: scale(.6)
+    position: relative
+    left: 5 * $base
+
+.search
+    @include search-bar-container
+
+.search-icon
+    margin-left: $base * 1/2
+    margin-right: $base
+
+.search-bar
+    @include search-bar
+
+// Social media login:
+.social-media
+    @include icon 
+
+.social-media-login 
+    display: flex
+    justify-content: center
+
+// Settings:
+.option
+    display: flex
+    align-items: center
+    margin: $base * 3/4 0
+
+.profile-picture
+    @include small-square
+    border-radius: 50%
+
+.option-description
+    font-weight: $semi-bold
+    margin-left: $base * 3/2
+    margin-right: $base * 5
+
+.icon-container
+    @include small-square
+    @include center-both-axes
+    border-radius: $rounded-image
+    background: $light-blue
