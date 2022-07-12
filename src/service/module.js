@@ -1,7 +1,5 @@
-import SmallTile from '../components/SmallTile';
-
-const validator = require('email-validator');
-const passwordValidator = require('password-validator');
+import * as emailValidator from 'email-validator';
+import * as passwordValidator from 'password-validator';
 
 export const validateName = (firstName, lastName) => {
     try {
@@ -79,18 +77,6 @@ export const getCurrentPathName = () => {
         console.error(error);
     }
 };
-
-export const displayTopics = (quantity) => {
-  try {
-    const element = <SmallTile name='Temat' /> ;
-    let array = [];
-
-    for (let i = 0; i < quantity; i += 1) array[i] = element;
-    return array;
-  } catch (error) {
-    console.error(error);
-  }
-}
 
 // Source: https://stackoverflow.com/questions/286921/efficiently-replace-all-accented-characters-in-a-string
 
