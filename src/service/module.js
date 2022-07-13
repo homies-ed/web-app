@@ -1,5 +1,5 @@
-import * as emailValidator from 'email-validator';
-import * as passwordValidator from 'password-validator';
+import * as EmailValidator from 'email-validator';
+import validator from 'validator';
 
 export const validateName = (firstName, lastName) => {
     try {
@@ -11,7 +11,14 @@ export const validateName = (firstName, lastName) => {
 
 export const validatePassword = (password) => {
     try {
-        return schema.validate(password);
+        const isStrong = validator.isStrongPassword(password, {
+            minLength: 9,
+            minUppercase: 1,
+            minLowercase: 1,
+            minNumbers: 1,
+            minSymbols: 1
+        });
+        return isStrong;
     } catch (error) {
         console.error(error);
     }
@@ -19,22 +26,11 @@ export const validatePassword = (password) => {
 
 export const validateEmail = (email) => {
     try {
-        return validator.validate(email);
+        return EmailValidator.validate(email);
     } catch (error) {
         console.error(error);
     }
 };
-
-const schema = new passwordValidator();
-
-schema
-    .is().min(9)
-    .has().letters()
-    .has().uppercase()
-    .has().lowercase()
-    .has().digits()
-    .has().symbols()
-    .has().not().spaces();
 
 export const validateCredentials = (nameRule, emailRule, passwordRule, permissions) => {
     try {
