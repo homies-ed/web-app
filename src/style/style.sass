@@ -89,6 +89,9 @@ html
     padding: $base
     color: $white 
 
+.icon
+    max-height: 3 * $base 
+
 // Pages:
 .start, .login, .signup
     @include display-fullscreen
@@ -112,6 +115,9 @@ html
 
 .back-settings
     @include back-icon($page: settings)
+
+.logo 
+    max-width: 90vw
 
 // Zbieranina:
 .subject-tiles
@@ -229,14 +235,6 @@ html
 
 .search-bar
     @include search-bar
-
-// Social media login:
-.social-media
-    @include icon 
-
-.social-media-login 
-    display: flex
-    justify-content: center
 
 // Settings:
 .option

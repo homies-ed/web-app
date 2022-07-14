@@ -16,13 +16,14 @@ $semi-bold: 500
 $bold: 700
 
 // Colours 
-$red: #f2542d
-$orange: #ffbe0b
-$yellow: #ffd000
-$light-blue: #a2d2ff
-$dark-blue: #3f37c9
-$white: #ffffff
 $black: #0b090a
+$white: #ffffff
+$dark-blue: #3f37c9
+$light-blue: #a2d2ff
+$green: #10ac6a
+$yellow: #ffd000
+$red: #f2542d
+$gradient: linear-gradient(146.23deg, #A2D2FF 26.12%, rgba(63, 55, 201, 0.75) 55.05%, #F2542D 100.19%)
 
 // Utilities:
 @mixin reset-defaults
@@ -116,7 +117,8 @@ $black: #0b090a
     position: fixed
     bottom: 0
     width: 100%
-    background-color: $dark-blue
+    background-color: $white
+    border-top: 1px solid $black 
 
 @mixin side-container 
     display: flex
@@ -167,16 +169,6 @@ $black: #0b090a
 
     &::placeholder
         color: $black
-
-@mixin icon 
-    margin: 0 $base
-    font-size: $base * 3/2
-    padding: $base
-    background-color: $white
-    @include be-clickable
-
-    &:hover
-        cursor: pointer
 
 @mixin back-icon($page)
     position: fixed 

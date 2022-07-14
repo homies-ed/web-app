@@ -124,12 +124,17 @@ html {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #3f37c9;
+  background-color: #ffffff;
+  border-top: 1px solid #0b090a;
 }
 
 .menu-item {
   padding: 16px;
   color: #ffffff;
+}
+
+.icon {
+  max-height: 48px;
 }
 
 .start, .login, .signup {
@@ -184,6 +189,10 @@ html {
   position: fixed;
   top: 32px;
   left: 32px;
+}
+
+.logo {
+  max-width: 90vw;
 }
 
 .subject-tiles {
@@ -446,28 +455,6 @@ html {
 
 .search-bar::placeholder {
   color: #0b090a;
-}
-
-.social-media {
-  margin: 0 16px;
-  font-size: 24px;
-  padding: 16px;
-  background-color: #ffffff;
-  min-height: 48px;
-  min-width: 48px;
-}
-
-.social-media:hover {
-  cursor: pointer;
-}
-
-.social-media-login {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .option {
