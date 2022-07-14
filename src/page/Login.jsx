@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider, getAuth, signInWithPopup, FacebookAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from 'firebase/auth';
 
 import VisibilityIcon from '../icon/VisibilityIcon';
+import Logo from '../component/Logo';
 
 const auth = getAuth();
 auth.languageCode = 'pl';
@@ -45,6 +46,7 @@ const Login = () => {
 
 	return (
 		<article className='login'>
+			<Logo />
 			<form action='' method='' className='form'>
 				<input type='email' id='email-login' className='input' placeholder='Adres email' tabIndex='0' required/>
 				<div className='password-input'>
@@ -56,10 +58,6 @@ const Login = () => {
 				<input type='button' value='Zaloguj się' id='button-login' className='button login-button link' onClick={handleLogin} required/>
 			</form>
 			<section className='alt-login'>
-				<section className='social-media-login'>
-					<span className='social-media' tabIndex='0' onClick={googleLogin}>&nbsp;Google</span>
-					<span className='social-media' tabIndex='0' onClick={facebookLogin}>&nbsp;Facebook</span>
-				</section>
 				<footer>
 					<hr className='break'/>
 					<p className='help-message'>Nie masz konta? &nbsp;<span className='signup-link'><Link to='/rejestracja' className='link'>Zarejestruj się</Link></span></p>

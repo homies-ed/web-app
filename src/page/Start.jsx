@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { initializeApp } from 'firebase/app';
 import { onAuthStateChanged, getAuth } from 'firebase/auth';
 import { useTabIndex } from '../service/module';
+import Logo from '../component/Logo';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAhkZ7DS7BcnGHEwMkpOPc_7K8j8rW8b-A',
@@ -33,6 +34,7 @@ const Start = () => {
 
   return (
     <article className='start'>
+      <Logo />
       <p className='quote' tabIndex='0'>Curabitur tincidunt lorem lobortis lorem venenatis, et porttitor dui porttitor. Nam vel malesuada tortor.</p>
       <Link to={destination}><button className='start-button button link'>Zacznij</button></Link>
     </article>

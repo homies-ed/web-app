@@ -2,6 +2,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged } from 'firebase/auth';
 import { validateName, validateEmail, validatePassword, validateCredentials } from '../service/module';
 
+import Logo from '../component/Logo';
+
 const auth = getAuth();
 
 const createAccount = (email, password, firstName, lastName) => {
@@ -37,6 +39,7 @@ const SignUp = () => {
 
   return (
     <article className='signup'>
+      <Logo />
       <form action='' method='' className='form'>
         <input type='text' id='first-name-signup' className='input' placeholder='Imię' tabIndex='0' required/>
         <input type='text' id='last-name-signup' className='input' placeholder='Nazwisko' tabIndex='0' required/>

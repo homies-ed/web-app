@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
-import HomeIcon from "../icon/HomeIcon";
+
 import CalendarIcon from '../icon/CalendarIcon';
 import SettingsIcon from '../icon/SettingsIcon';
+import HomiesIcon from '../icon/HomiesIcon';
 
 const Menu = () => {
   return (
@@ -13,7 +14,7 @@ const Menu = () => {
       </Link>
       <Link to='/zbieranina' className='link'>
         <li className='menu-item'>
-            <HomeIcon />
+            <HomiesIcon />
         </li>
       </Link>
       <Link to='/ustawienia' className='link'>
