@@ -94,9 +94,10 @@ html {
 .button {
   margin: 32px;
   padding: 16px;
-  background-color: #0b090a;
   color: #ffffff;
   border: none;
+  font-size: 24px;
+  background: #3f37c9;
   min-height: 48px;
   min-width: 48px;
 }
@@ -107,6 +108,11 @@ html {
 
 .start-button, .login-button {
   width: 80vw;
+  margin: 0;
+}
+
+.login-button {
+  margin-top: 16px;
 }
 
 .start-button {
@@ -125,7 +131,7 @@ html {
   bottom: 0;
   width: 100%;
   background-color: #ffffff;
-  border-top: 1px solid #0b090a;
+  border-top: 1px solid #3f37c9;
 }
 
 .menu-item {
@@ -137,9 +143,26 @@ html {
   max-height: 48px;
 }
 
-.start, .login, .signup {
+.start, .signup {
   width: 100vw;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.login {
+  height: calc(100vh - 80px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -177,6 +200,15 @@ html {
 .quote {
   text-align: center;
   max-width: 80vw;
+  position: relative;
+  top: 56px;
+}
+
+.blob {
+  position: fixed;
+  bottom: -130px;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
 }
 
 .back-zbieranina {
@@ -332,12 +364,14 @@ html {
 }
 
 .password-tooltip {
-  min-height: 48px;
-  min-width: 48px;
-  font-size: 12px;
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin-right: 16px;
+}
+
+.tooltip {
+  font-weight: 400;
+  font-size: 12px;
 }
 
 .checkbox-container {
@@ -364,10 +398,30 @@ html {
   margin: 8px;
   padding: 16px;
   background-color: #ffffff;
-  color: #0b090a;
-  border: 1px solid #0b090a;
+  color: #3f37c9;
+  border: 3px solid #3f37c9;
   min-height: 48px;
   min-width: 48px;
+}
+
+::-webkit-input-placeholder {
+  color: #3f37c9;
+  font-weight: 700;
+}
+
+:-ms-input-placeholder {
+  color: #3f37c9;
+  font-weight: 700;
+}
+
+::-ms-input-placeholder {
+  color: #3f37c9;
+  font-weight: 700;
+}
+
+::placeholder {
+  color: #3f37c9;
+  font-weight: 700;
 }
 
 .password-input {
@@ -388,6 +442,16 @@ html {
   border: none;
 }
 
+.alt-login {
+  width: 100vw;
+  position: absolute;
+  bottom: 32px;
+}
+
+.signup-link {
+  color: #3f37c9;
+}
+
 .password-bar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -396,13 +460,14 @@ html {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 16px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .visibility-icon {
   -webkit-transform: scale(0.6);
           transform: scale(0.6);
-  position: relative;
-  left: 80px;
 }
 
 .search {

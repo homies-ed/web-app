@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider, getAuth, signInWithPopup, FacebookAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from 'firebase/auth';
 
@@ -45,25 +46,27 @@ const Login = () => {
 	});
 
 	return (
-		<article className='login'>
-			<Logo />
-			<form action='' method='' className='form'>
-				<input type='email' id='email-login' className='input' placeholder='Adres email' tabIndex='0' required/>
-				<div className='password-input'>
-					<div className='input password-bar'>
-						<input type='password' id='password-login' className='password-login' placeholder='Hasło' tabIndex='0' required/><VisibilityIcon />
+		<React.Fragment>
+			<article className='login'>
+				<Logo />
+				<form action='' method='' className='form'>
+					<input type='email' id='email-login' className='input' placeholder='Adres email' tabIndex='0' required />
+					<div className='password-input'>
+						<div className='input password-bar'>
+							<input type='password' id='password-login' className='password-login' placeholder='Hasło' tabIndex='0' required /><VisibilityIcon />
+						</div>
+						<p className='password-tooltip' tabIndex='0'><Link to='/odzyskaj-haslo' className='link tooltip'>Nie pamiętasz hasła?</Link></p>
 					</div>
-					<p className='password-tooltip' tabIndex='0'><Link to='/odzyskaj-haslo' className='link'>Nie pamiętasz hasła?</Link></p>
-				</div>
-				<input type='button' value='Zaloguj się' id='button-login' className='button login-button link' onClick={handleLogin} required/>
-			</form>
+					<input type='button' value='Zaloguj się' id='button-login' className='button login-button link' onClick={handleLogin} required />
+				</form>
+			</article>
 			<section className='alt-login'>
 				<footer>
-					<hr className='break'/>
-					<p className='help-message'>Nie masz konta? &nbsp;<span className='signup-link'><Link to='/rejestracja' className='link'>Zarejestruj się</Link></span></p>
+					<hr className='break' />
+					<p className='help-message'>Nie masz konta? &nbsp;<span className='signup-link'><Link to='/rejestracja' className='link signup-link'>Zarejestruj się</Link></span></p>
 				</footer>
 			</section>
-		</article>
+		</React.Fragment>
 	);
 }
 
