@@ -15,7 +15,7 @@ const changeIcon = () => {
 
 const VisibilityIcon = () => {
     return (
-        <svg id='svg' className='visibility-icon' xmlns='http://www.w3.org/2000/svg' height='48' width='48' onClick={changeIcon}><path d={hiddenIcon}></path></svg>
+        <svg id='svg' className='visibility-icon' xmlns='http://www.w3.org/2000/svg' height='48' width='48' fill='#3f37c9' onClick={changeIcon}><path d={hiddenIcon}></path></svg>
     );
 };
   
