@@ -14,6 +14,7 @@ import Topics from "./page/Topics";
 import Documents from "./page/Documents";
 
 import reportWebVitals from "./reportWebVitals";
+import "./style/style.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
