@@ -84,6 +84,8 @@ $gradient: linear-gradient(146.23deg, #A2D2FF 26.12%, rgba(63, 55, 201, 0.75) 55
     background: $dark-blue
 
 @mixin input 
+    font-weight: $bold
+    font-family: 'Roboto', sans-serif  
     width: $wide
     margin: $base * 1/2
     padding: $base
@@ -274,8 +276,17 @@ html
 .start, .signup
     @include display-fullscreen
     @include center-vertically
+
+.start
     justify-content: space-evenly
     
+.signup
+    justify-content: space-between
+
+    .logo
+        position: relative
+        top: $base * 2
+
 .login
     height: calc(100vh - 80px)
     @include center-vertically
@@ -293,7 +304,7 @@ html
     text-align: center
     max-width: $wide
     position: relative
-    top: $base * 3.5
+    top: $base * 1.75
 
 .blob
     position: fixed
@@ -411,6 +422,8 @@ html
     font-family: 'Roboto', sans-serif  
     line-height: $base
     border: none 
+    font-weight: $bold
+    color: $dark-blue
 
 .alt-login
     width: 100vw

@@ -156,9 +156,23 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.start {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+.signup {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.signup .logo {
+  position: relative;
+  top: 32px;
 }
 
 .login {
@@ -201,7 +215,7 @@ html {
   text-align: center;
   max-width: 80vw;
   position: relative;
-  top: 56px;
+  top: 28px;
 }
 
 .blob {
@@ -394,6 +408,8 @@ html {
 }
 
 .input {
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
   width: 80vw;
   margin: 8px;
   padding: 16px;
@@ -440,6 +456,8 @@ html {
   font-family: 'Roboto', sans-serif;
   line-height: 16px;
   border: none;
+  font-weight: 700;
+  color: #3f37c9;
 }
 
 .alt-login {
