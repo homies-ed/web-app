@@ -5,13 +5,13 @@ import { useTabIndex } from '../service/module';
 import Logo from '../component/Logo';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAhkZ7DS7BcnGHEwMkpOPc_7K8j8rW8b-A',
-  authDomain: 'homies-web.firebaseapp.com',
-  projectId: 'homies-web',
-  storageBucket: 'homies-web.appspot.com',
-  messagingSenderId: '705309071530',
-  appId: '1:705309071530:web:e0a1832d656b4001e198d3',
-  measurementId: 'G-ZXJ9YDRLZM'
+  apiKey: "AIzaSyD9Ynqwmh0s-_2Bw1PGfYsXguSThD0kN5A",
+  authDomain: "homies-homeschool.firebaseapp.com",
+  projectId: "homies-homeschool",
+  storageBucket: "homies-homeschool.appspot.com",
+  messagingSenderId: "222336692108",
+  appId: "1:222336692108:web:9883ee14c3b884d28e30a9",
+  measurementId: "G-H51F0KDXPC"
 };
 
 const app = initializeApp(firebaseConfig);
