@@ -1,1 +1,1 @@
-this.addEventListener('fetch', () => {});
+this.addEventListener("fetch", () => {});

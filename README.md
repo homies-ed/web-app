@@ -1,3 +1,3 @@
 # Aplikacja webowa HOMIES
 
-Repozytorium produkcyjne
+Repozytorium deweloperskie

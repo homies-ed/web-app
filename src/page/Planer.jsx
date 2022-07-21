@@ -1,9 +1,9 @@
-import Menu from '../component/Menu';
+import Menu from "../component/Menu";
 
 const Planer = () => {
   return (
-    <article className='planer'>
-      <h1 className='secondary-heading'>Jesteś w planerze!</h1>
+    <article className="planer">
+      <h1 className="secondary-heading">Jesteś w planerze!</h1>
       <Menu />
     </article>
   );

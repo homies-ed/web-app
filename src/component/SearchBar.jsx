@@ -1,10 +1,10 @@
-import SearchIcon from '../icon/SearchIcon';
+import SearchIcon from "../icon/SearchIcon";
 
 const SearchBar = () => {
     return (
-        <div className='search'>
+        <div className="search">
             <SearchIcon />
-            <input type='search' placeholder='Wyszukaj' className='search-bar' />
+            <input type="search" placeholder="Wyszukaj" className="search-bar" />
         </div>
     )
 }

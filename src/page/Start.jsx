@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
-import { initializeApp } from 'firebase/app';
-import { onAuthStateChanged, getAuth } from 'firebase/auth';
-import { useTabIndex } from '../service/module';
-import Logo from '../component/Logo';
+import { Link } from "react-router-dom";
+import { initializeApp } from "firebase/app";
+import { onAuthStateChanged, getAuth } from "firebase/auth";
+import { useTabIndex } from "../service/module";
+import Logo from "../component/Logo";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD9Ynqwmh0s-_2Bw1PGfYsXguSThD0kN5A",
@@ -30,13 +30,13 @@ const isAuthorised = () => {
 const Start = () => {
   useTabIndex();
 
-  let destination = isAuthorised() ? '/zbieranina' : '/logowanie';
+  let destination = isAuthorised() ? "/zbieranina" : "/logowanie";
 
   return (
-    <article className='start'>
+    <article className="start">
       <Logo />
-      <p className='quote' tabIndex='0'>Curabitur tincidunt lorem lobortis lorem venenatis, et porttitor dui porttitor. Nam vel malesuada tortor.</p>
-      <Link to={destination}><button className='start-button button link'>Zacznij</button></Link>
+      <p className="quote" tabIndex="0">Curabitur tincidunt lorem lobortis lorem venenatis, et porttitor dui porttitor. Nam vel malesuada tortor.</p>
+      <Link to={destination}><button className="start-button button link">Zacznij</button></Link>
     </article>
   );
 }
