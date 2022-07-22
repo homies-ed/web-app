@@ -1,24 +1,33 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import DOMPurify from "dompurify";
 
 import Logo from "../component/Logo";
-import PasswordInput from "../component/PasswordInput";
+import VisibilityIcon from "../icon/VisibilityIcon";
 
 const auth = getAuth();
 auth.languageCode = "pl";
 
 const emailLogin = () => {
-	const email = document.getElementById("email-login").value;
-	const password = document.getElementById("password-login").value;
-	signInWithEmailAndPassword(auth, email, password);
+	try {
+		const email = DOMPurify.sanizite(document.getElementById("email-login").value);
+		const password = DOMPurify.sanizite(document.getElementById("password-login").value);
+		signInWithEmailAndPassword(auth, email, password);
+	} catch (error) {
+		console.error(error);
+	}
 }
 
 const Login = () => {
 	const navigate = useNavigate();
 
 	onAuthStateChanged(auth, (user) => {
-		if (user) navigate("/zbieranina");
+		try {
+			if (user) navigate("/zbieranina");
+		} catch (error) {
+			console.error(error);
+		}
 	});
 
 	return (
@@ -28,10 +37,12 @@ const Login = () => {
 				<form action="" method="" className="form">
 					<input type="email" id="email-login" className="input" placeholder="Adres email" tabIndex="0" required />
 					<div className="password-input">
-						<PasswordInput />
+						<div className="input password-bar">
+							<input type="password" id="password-login" className="password-login" placeholder="Hasło" tabIndex="0" required /><VisibilityIcon />
+						</div>
 						<p className="password-tooltip" tabIndex="0"><Link to="/odzyskaj-haslo" className="link tooltip">Nie pamiętasz hasła?</Link></p>
 					</div>
-					<input type="button" value="Zaloguj się" id="button-login" className="button login-button link" required />
+					<input type="button" value="Zaloguj się" id="button-login" className="button login-button link" required onClick={emailLogin}/>
 				</form>
 			</article>
 			<section className="alt-login">
