@@ -1,6 +1,5 @@
 import Menu from "../component/Menu";
 import Document from "../component/Document";
-import SearchBar from "../component/SearchBar";
 import BackIcon from "../icon/BackIcon";
 
 const Documents = () => {
@@ -8,7 +7,6 @@ const Documents = () => {
         <section className="documents">
             <BackIcon class="back-zbieranina" />
             <h1 className="documents-heading">Temat</h1>
-            <SearchBar />
             <section className="documents-container">
                 <Document name="Materiał" tags="notatka, do 10 minut" />
                 <Document name="Materiał" tags="artykuł, do 20 minut" />

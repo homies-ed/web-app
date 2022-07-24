@@ -192,7 +192,7 @@ html {
           justify-content: space-evenly;
 }
 
-.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery, .planer, .grade-choice, .topics, .documents {
+.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .planer, .grade-choice, .topics, .documents {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -247,11 +247,21 @@ html {
   display: flex;
   -ms-flex-item-align: start;
       align-self: flex-start;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
   margin-left: 24px;
   margin-bottom: 20px;
+}
+
+.scrolling-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   overflow-x: scroll;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+}
+
+.scrolled-children {
+  scroll-snap-align: start;
 }
 
 .tile {
@@ -440,16 +450,6 @@ html {
   font-weight: 700;
 }
 
-.password-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
 .password-login {
   min-height: 48px;
   min-width: 48px;
@@ -486,58 +486,6 @@ html {
 .visibility-icon {
   -webkit-transform: scale(0.6);
           transform: scale(0.6);
-}
-
-.search {
-  height: 48px;
-  margin-bottom: 32px;
-  border-radius: 16px;
-  padding: 12px;
-  width: 80vw;
-  background: #a2d2ff;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.search-icon {
-  margin-left: 8px;
-  margin-right: 16px;
-}
-
-.search-bar {
-  background: transparent;
-  border: none;
-  height: inherit;
-  width: inherit;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  line-height: 16px;
-}
-
-.search-bar:focus {
-  border: none;
-  outline: none;
-}
-
-.search-bar::-webkit-input-placeholder {
-  color: #0b090a;
-}
-
-.search-bar:-ms-input-placeholder {
-  color: #0b090a;
-}
-
-.search-bar::-ms-input-placeholder {
-  color: #0b090a;
-}
-
-.search-bar::placeholder {
-  color: #0b090a;
 }
 
 .option {

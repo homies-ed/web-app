@@ -8,7 +8,6 @@ import SignUp from "./page/SignUp";
 import Privacy from "./page/Privacy";
 import Terms from "./page/Terms";
 import Settings from "./page/Settings";
-import PasswordRecovery from "./page/PasswordRecovery";
 import Planer from "./page/Planer";
 import Topics from "./page/Topics";
 import Documents from "./page/Documents";
@@ -28,7 +27,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route path="/ustawienia" element={<Settings />} />
       <Route path="/regulamin" element={<Terms />} />
       <Route path="/polityka-prywatnosci" element={<Privacy />} />
-      <Route path="/odzyskaj-haslo" element={<PasswordRecovery />} />
       <Route path="/zbieranina" element={<Zbieranina />} />
       <Route path="/zbieranina/polski" element={<Topics subject="Język polski" />} />
       <Route path="/zbieranina/angielski" element={<Topics subject="Język angielski" />} />

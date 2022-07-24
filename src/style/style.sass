@@ -119,10 +119,8 @@ $gradient: linear-gradient(146.23deg, #A2D2FF 26.12%, rgba(63, 55, 201, 0.75) 55
 @mixin side-container 
     display: flex
     align-self: flex-start
-    flex-wrap: nowrap
     margin-left: $base * 3/2
     margin-bottom: $base * 5/4
-    overflow-x: scroll 
 
 @mixin tile 
     @include lay-vertically
@@ -138,33 +136,6 @@ $gradient: linear-gradient(146.23deg, #A2D2FF 26.12%, rgba(63, 55, 201, 0.75) 55
     display: flex
     align-items: center
     margin: $base * 1/2
-
-@mixin search-bar-container 
-    height: $base * 3
-    margin-bottom: $base * 2
-    border-radius: $base
-    padding: $base * 3/4
-    width: $wide
-    background: $light-blue
-    overflow: hidden
-    display: flex
-    align-items: center
-
-@mixin search-bar
-    background: transparent 
-    border: none
-    height: inherit
-    width: inherit
-    font-family: 'Roboto', sans-serif 
-    font-size: $base 
-    line-height: $base
-
-    &:focus
-        border: none
-        outline: none
-
-    &::placeholder
-        color: $black
 
 @mixin back-icon($page)
     position: fixed 
@@ -292,7 +263,7 @@ html
     @include center-vertically
     justify-content: space-evenly
 
-.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery, .planer, .grade-choice, .topics, .documents
+.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .planer, .grade-choice, .topics, .documents
     @include center-vertically
     overflow: hidden
     margin-bottom: $base * 6
@@ -323,6 +294,14 @@ html
 // Zbieranina:
 .subject-tiles
     @include side-container
+
+.scrolling-parent
+    display: flex
+    overflow-x: scroll
+    scroll-snap-type: x mandatory   
+
+.scrolled-children
+    scroll-snap-align: start  
 
 .tile
     @include tile
@@ -414,9 +393,6 @@ html
     color: $dark-blue 
     font-weight: $bold
 
-.password-input 
-    @include lay-vertically
-
 .password-login
     @include be-clickable  
     font-family: 'Roboto', sans-serif  
@@ -441,16 +417,6 @@ html
 
 .visibility-icon
     transform: scale(.6)
-
-.search
-    @include search-bar-container
-
-.search-icon
-    margin-left: $base * 1/2
-    margin-right: $base
-
-.search-bar
-    @include search-bar
 
 // Settings:
 .option

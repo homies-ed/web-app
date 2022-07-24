@@ -2,7 +2,6 @@ import { getAuth } from "firebase/auth";
 
 import Menu from "../component/Menu";
 import Tile from "../component/Tile";
-import SearchBar from "../component/SearchBar";
 import SmallTile from "../component/SmallTile";
 
 const displayTopics = (quantity) => {
@@ -35,9 +34,8 @@ const Zbieranina = () => {
 				<span className="greeting">Cześć, XYZ!</span> 
 				<br/> Czego chcesz się dzisiaj nauczyć?
 			</h1>
-			<SearchBar />
 			<h2 className="tertiary-heading">Przedmioty</h2>
-			<article className="subject-tiles">
+			<article className="subject-tiles scrolling-parent">
 				{displayTiles()}
 			</article>
 			<h2 className="tertiary-heading">Ostatnie lekcje</h2>
