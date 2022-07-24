@@ -36,11 +36,8 @@ const Login = () => {
 				<Logo />
 				<form action="" method="" className="form">
 					<input type="email" id="email-login" className="input" placeholder="Adres email" tabIndex="0" required />
-					<div className="password-input">
-						<div className="input password-bar">
-							<input type="password" id="password-login" className="password-login" placeholder="Hasło" tabIndex="0" required /><VisibilityIcon />
-						</div>
-						<p className="password-tooltip" tabIndex="0"><Link to="/odzyskaj-haslo" className="link tooltip">Nie pamiętasz hasła?</Link></p>
+					<div className="input password-bar">
+						<input type="password" id="password-login" className="password-login" placeholder="Hasło" tabIndex="0" required /><VisibilityIcon />
 					</div>
 					<input type="button" value="Zaloguj się" id="button-login" className="button login-button link" required onClick={emailLogin}/>
 				</form>

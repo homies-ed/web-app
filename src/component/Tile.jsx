@@ -7,7 +7,7 @@ const Tile = (props) => {
     const link = "/zbieranina/" + name;
 
     return (
-        <Link to={link} className="link">
+        <Link to={link} className="link scrolled-children">
             <section className="tile">
                 <MockImage size="175/175" class="tile-image" />
                 <hr className="tile-break" />
