@@ -1,5 +1,3 @@
-import MockImage from "./MockImage";
-
 const generateTags = (tags) => {
     let data = tags;
     const array = data.split(",");
@@ -17,7 +15,6 @@ const generateTags = (tags) => {
 const Document = (props) => {
     return (
         <section className="item">
-            <MockImage size="155/110" class="documents-image" />
             <section className="item-info">
                 <span className="item-name">{props.name}</span>
                 {generateTags(props.tags)}
