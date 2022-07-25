@@ -16,7 +16,9 @@ $light-blue: #a2d2ff
 $green: #10ac6a
 $yellow: #ffd000
 $red: #f2542d
-$gradient: linear-gradient(146.23deg, #A2D2FF 26.12%, rgba(63, 55, 201, 0.75) 55.05%, #F2542D 100.19%)
+
+// Other
+$tile-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25)
 
 // Utilities:
 @mixin reset-defaults
@@ -67,13 +69,13 @@ $gradient: linear-gradient(146.23deg, #A2D2FF 26.12%, rgba(63, 55, 201, 0.75) 55
         font-size: $base * 3
 
     @else if $role == secondary
-        font-size: $base * 3/2
+        font-size: $base * 2
         margin: $base * 2 0
 
     @else if $role == tertiary
         font-size: $base
         align-self: flex-start
-        margin: $base * 1/2 0 $base * 1/2 $base * 9/4
+        margin: $base * 1/2 0 $base * 1/2 $base * 2.5
 
 @mixin button
     margin: $base * 2
@@ -120,19 +122,21 @@ $gradient: linear-gradient(146.23deg, #A2D2FF 26.12%, rgba(63, 55, 201, 0.75) 55
     display: flex
     align-self: flex-start
     margin-left: $base * 3/2
-    margin-bottom: $base * 5/4
+    margin-bottom: $base * 2
 
 @mixin tile 
     @include lay-vertically
-    border: 1px solid $black
+    border: $base / 2 solid $light-blue
     border-radius: $rounded-image
     background: $light-blue
+    box-shadow: $tile-shadow
     margin: 0 $base * 5/8
 
 @mixin small-tile
     background: $light-blue
     width: $wide
     border-radius: $base * 3/4
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25)
     display: flex
     align-items: center
     margin: $base * 1/2
@@ -141,8 +145,8 @@ $gradient: linear-gradient(146.23deg, #A2D2FF 26.12%, rgba(63, 55, 201, 0.75) 55
     position: fixed 
 
     @if $page == zbieranina
-        top: $base
-        left: $base
+        top: $base * 1.5
+        left: $base * 1.5
     
     @else if $page == settings
         top: $base * 2
@@ -178,9 +182,6 @@ html
 .break 
     @include break($size: big) 
 
-.tile-break
-    @include break($size: small)  
-
 // Headings:
 .heading
     @include heading($role: primary)
@@ -188,8 +189,19 @@ html
 .secondary-heading 
     @include heading($role: secondary)
 
+.zbieranina-heading
+    align-self: flex-start
+    margin-left: $base * 2.5
+
 .greeting
-    font-size: $base * 9/4
+    color: $dark-blue
+
+.name
+    color: $yellow
+
+.subheading
+    @include heading($role: tertiary) 
+    margin: 0 !important
 
 .tertiary-heading 
     @include heading($role: tertiary) 
@@ -197,6 +209,7 @@ html
 .topics-heading
     @include heading($role: primary)
     text-align: center
+    margin-bottom: $base * 2
 
 .documents-heading
     @include heading($role: primary)
@@ -266,7 +279,7 @@ html
 .zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .planer, .grade-choice, .topics, .documents
     @include center-vertically
     overflow: hidden
-    margin-bottom: $base * 6
+    margin-bottom: $base * 7
 
 .topics
     margin-top: $base * 4
@@ -295,27 +308,11 @@ html
 .subject-tiles
     @include side-container
 
-.scrolling-parent
-    display: flex
-    overflow-x: scroll
-    scroll-snap-type: x mandatory   
-
-.scrolled-children
-    scroll-snap-align: start  
-
 .tile
     @include tile
 
-.tile-image, .documents-image
-    border-top-left-radius: $rounded-image
-    border-top-right-radius: $rounded-image
-
 .small-tile
     @include small-tile
-
-.small-tile-image
-    border-top-left-radius: $rounded-image
-    border-bottom-left-radius: $rounded-image
 
 .subject-name
     text-align: center
@@ -326,11 +323,6 @@ html
 .lesson-name
     margin: $base * 5/4
     font-weight: $semi-bold
-
-.topics-image
-    border-radius: $base * 5/4
-    border: 2px solid $black
-    margin: $base 0 
 
 .item
     @include lay-vertically
@@ -350,9 +342,6 @@ html
 
 .tag 
     @include tag
-
-.documents-image 
-    border-bottom: 1px solid $black 
 
 .documents-container
     display: flex
