@@ -18,7 +18,7 @@ const displayTiles = () => {
 	const subjects = ["Polski", "Matematyka", "Angielski"];
 	const tiles = [];
 	for(let i = 0; i < subjects.length; i += 1) {
-		tiles[i] = <Tile name={subjects[i]} key={i}/>;
+		tiles[i] = <Tile name={subjects[i]} key={i} />;
 	}
 	return tiles;
 }
@@ -30,12 +30,13 @@ const Zbieranina = () => {
 
 	return (
 		<article className="zbieranina">
-			<h1 className="secondary-heading" tabIndex="0">
-				<span className="greeting">Cześć, XYZ!</span> 
-				<br/> Czego chcesz się dzisiaj nauczyć?
+			<h1 className="secondary-heading zbieranina-heading" tabIndex="0">
+				<span className="greeting">Cześć, </span>
+				<span className="name">Laura!</span> <br/>
+				<span className="subheading">Czego chcesz się dzisiaj nauczyć?</span>
 			</h1>
 			<h2 className="tertiary-heading">Przedmioty</h2>
-			<article className="subject-tiles scrolling-parent">
+			<article className="subject-tiles">
 				{displayTiles()}
 			</article>
 			<h2 className="tertiary-heading">Ostatnie lekcje</h2>

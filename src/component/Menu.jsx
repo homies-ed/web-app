@@ -9,17 +9,17 @@ const Menu = () => {
     <ol className="menu">
       <Link to="/planer" className="link">
         <li className="menu-item">
-            <CalendarIcon />
+          <CalendarIcon />
         </li>
       </Link>
       <Link to="/zbieranina" className="link">
         <li className="menu-item">
-            <HomiesIcon />
+          <HomiesIcon />
         </li>
       </Link>
       <Link to="/ustawienia" className="link">
         <li className="menu-item">
-            <SettingsIcon />
+          <SettingsIcon />
         </li>
       </Link>
     </ol>
