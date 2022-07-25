@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged } from "firebase/auth";
 import { validateName, validateEmail, validatePassword, validateCredentials } from "../service/module";
-import DOMPurify from "dompurify";
+import DOMPurify from "isomorphic-dompurify";
 
 import Logo from "../component/Logo";
 import VisibilityIcon from "../icon/VisibilityIcon";
