@@ -131,6 +131,7 @@ $tile-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25)
     background: $light-blue
     box-shadow: $tile-shadow
     margin: 0 $base * 5/8
+    width: 200px
 
 @mixin small-tile
     background: $light-blue
@@ -139,6 +140,7 @@ $tile-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25)
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25)
     display: flex
     align-items: center
+    justify-content: space-between
     margin: $base * 1/2
 
 @mixin back-icon($page)
@@ -192,6 +194,7 @@ html
 .zbieranina-heading
     align-self: flex-start
     margin-left: $base * 2.5
+    font-size: $base * 2.25
 
 .greeting
     color: $dark-blue
@@ -311,6 +314,11 @@ html
 .tile
     @include tile
 
+.illustration
+    max-height: 150px
+    background: $white
+    border-radius: $rounded-image
+
 .small-tile
     @include small-tile
 
@@ -318,7 +326,7 @@ html
     text-align: center
     font-size: $base * 5/4
     font-weight: $semi-bold
-    padding: $base * 3/4 $base * 2
+    padding: $base * 3/2    $base * 2 $base * 3/4 $base * 2
 
 .lesson-name
     margin: $base * 5/4

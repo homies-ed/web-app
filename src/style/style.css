@@ -45,6 +45,7 @@ html {
   -ms-flex-item-align: start;
       align-self: flex-start;
   margin-left: 40px;
+  font-size: 36px;
 }
 
 .greeting {
@@ -278,6 +279,13 @@ html {
   -webkit-box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 0 10px;
+  width: 200px;
+}
+
+.illustration {
+  max-height: 150px;
+  background: #ffffff;
+  border-radius: 10px;
 }
 
 .small-tile {
@@ -292,6 +300,9 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 8px;
 }
 
@@ -299,7 +310,7 @@ html {
   text-align: center;
   font-size: 20px;
   font-weight: 500;
-  padding: 12px 32px;
+  padding: 24px 32px 12px 32px;
 }
 
 .lesson-name {
