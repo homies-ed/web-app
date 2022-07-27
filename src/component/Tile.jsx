@@ -8,19 +8,20 @@ import Bibliophile from '../icon/Bibliophile';
 const Tile = (props) => {
     const name = props.name.latinise().toLowerCase().trim().replaceAll(" ", "-");
     const link = "/zbieranina/" + name;
+
     let illustration;
 
     switch (props.name) {
         case "Polski":
-            illustration = <Novelist />;
+            illustration = <Novelist imageSize="small" />;
         break;
 
         case "Angielski":
-            illustration = <Bibliophile />
+            illustration = <Bibliophile imageSize="small" />
         break;
 
         case "Matematyka":
-            illustration = <Mathematics />
+            illustration = <Mathematics imageSize="small" />
         break;
     }
 

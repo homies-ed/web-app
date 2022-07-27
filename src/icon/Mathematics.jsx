@@ -1,6 +1,8 @@
-const Mathematics = () => {
+const Mathematics = (props) => {
+    const sizingRule = props.imageSize === "small" ? "illustration" : "cover";
+
     return (
-        <svg className="illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+        <svg className={sizingRule} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
             <g>
                 <path fill="#FFD000" d="M59.47 104.12H440.53V351.78H59.47z"></path>
                 <path d="M59.47 104.12H440.53V351.78H59.47z" opacity="0.4"></path>

@@ -1,6 +1,8 @@
-const Novelist = () => {
-  return (
-      <svg className="illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+const Novelist = (props) => {
+    const sizingRule = props.imageSize === "small" ? "illustration" : "cover";
+
+    return (
+      <svg className={sizingRule} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
           <g>
               <path
                   fill="#fff"
