@@ -212,7 +212,6 @@ html
 .topics-heading
     @include heading($role: primary)
     text-align: center
-    margin-bottom: $base * 2
 
 .documents-heading
     @include heading($role: primary)
@@ -279,13 +278,31 @@ html
     @include center-vertically
     justify-content: space-evenly
 
-.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .planer, .grade-choice, .topics, .documents
+.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .planer, .grade-choice, .documents
     @include center-vertically
     overflow: hidden
     margin-bottom: $base * 7
 
 .topics
-    margin-top: $base * 4
+    @include center-vertically
+    overflow: hidden
+
+.topics
+    margin-top: $base * 2.5
+
+.topic-list
+    background: $light-blue
+    border-radius: $rounded-image * 2
+    width: 100vw
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-bottom: $base * 7
+    padding-top: $base * 2
+
+.topic-list .small-tile
+    margin: $base * 2/3
+    background: $white 
 
 .quote
     text-align: center
@@ -319,6 +336,10 @@ html
     background: $white
     border-radius: $rounded-image
 
+.cover 
+    max-height: 300px
+    border-radius: $rounded-image
+
 .small-tile
     @include small-tile
 
@@ -336,8 +357,11 @@ html
     @include lay-vertically
     border-radius: $rounded-image
     background: $light-blue
-    border: 1px solid $black 
-    margin: $base * 1/4 
+    margin: $base * 1/2
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25)
+    min-height: 200px
+    width: 40vw
+    max-width: 190px
 
 .item-info
     @include lay-vertically
@@ -354,7 +378,8 @@ html
 .documents-container
     display: flex
     flex-wrap: wrap 
-    width: $wide * 9/8
+    justify-content: center
+    margin: $base * 1/2
 
 // Form:
 .form, .confirmation
@@ -434,4 +459,3 @@ html
     @include small-square
     @include center-both-axes
     border-radius: $rounded-image
-    background: $light-blue

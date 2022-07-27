@@ -77,7 +77,6 @@ html {
   max-width: 80vw;
   font-size: 48px;
   text-align: center;
-  margin-bottom: 32px;
 }
 
 .documents-heading {
@@ -206,7 +205,7 @@ html {
           justify-content: space-evenly;
 }
 
-.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .planer, .grade-choice, .topics, .documents {
+.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .planer, .grade-choice, .documents {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -222,7 +221,44 @@ html {
 }
 
 .topics {
-  margin-top: 64px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.topics {
+  margin-top: 40px;
+}
+
+.topic-list {
+  background: #a2d2ff;
+  border-radius: 20px;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 112px;
+  padding-top: 32px;
+}
+
+.topic-list .small-tile {
+  margin: 10.66667px;
+  background: #ffffff;
 }
 
 .quote {
@@ -288,6 +324,11 @@ html {
   border-radius: 10px;
 }
 
+.cover {
+  max-height: 300px;
+  border-radius: 10px;
+}
+
 .small-tile {
   background: #a2d2ff;
   width: 80vw;
@@ -328,8 +369,12 @@ html {
           flex-direction: column;
   border-radius: 10px;
   background: #a2d2ff;
-  border: 1px solid #0b090a;
-  margin: 4px;
+  margin: 8px;
+  -webkit-box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+  min-height: 200px;
+  width: 40vw;
+  max-width: 190px;
 }
 
 .item-info {
@@ -366,7 +411,10 @@ html {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 90vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 8px;
 }
 
 .form, .confirmation {
@@ -522,6 +570,5 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 10px;
-  background: #a2d2ff;
 }
 /*# sourceMappingURL=style.css.map */
