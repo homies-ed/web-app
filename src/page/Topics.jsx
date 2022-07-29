@@ -17,14 +17,17 @@ const displayTopics = (subject) => {
     switch(subject) {
       case "Język polski":
         source = [...polishTopics];
+        localStorage.setItem("subject", "polish");
       break;
 
       case "Matematyka":
         source = [...mathTopics];
+        localStorage.setItem("subject", "math");
       break;
 
       case "Język angielski":
         source = [...englishTopics];
+        localStorage.setItem("subject", "english");
       break;
     }
 
