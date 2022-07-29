@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged } from "firebase/auth";
 import { validateName, validateEmail, validatePassword, validateCredentials } from "../service/module";
-import DOMPurify from "isomorphic-dompurify";
 
 import Logo from "../component/Logo";
 import VisibilityIcon from "../icon/VisibilityIcon";
@@ -21,10 +20,10 @@ const createAccount = (email, password, firstName, lastName) => {
 const getCredentials = () => {
   try {
     const firstName = DOMPurify.sanitize(document.getElementById("first-name-signup").value);
-    const lastName = DOMPurify.sanizite(document.getElementById("last-name-signup").value);
-    const email = DOMPurify.sanizite(document.getElementById("email-sign-up").value);
-    const password = DOMPurify.sanizite(document.getElementById("password-sign-up").value);
-    const checkbox = DOMPurify.sanizite(document.getElementById("checkbox-signup").checked);
+    const lastName = DOMPurify.sanitize(document.getElementById("last-name-signup").value);
+    const email = DOMPurify.sanitize(document.getElementById("email-sign-up").value);
+    const password = DOMPurify.sanitize(document.getElementById("password-sign-up").value);
+    const checkbox = DOMPurify.sanitize(document.getElementById("checkbox-signup").checked);
 
     const validName = validateName(firstName, lastName);
     const validEmail = validateEmail(email);

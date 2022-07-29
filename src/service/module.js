@@ -68,7 +68,7 @@ export const useTabIndex = () => {
 
 export const getCurrentPathName = () => {
     try {
-         return window.location.pathname;
+        return window.location.pathname;
     } catch (error) {
         console.error(error);
     }

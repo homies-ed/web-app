@@ -11,8 +11,8 @@ auth.languageCode = "pl";
 
 const emailLogin = () => {
 	try {
-		const email = DOMPurify.sanizite(document.getElementById("email-login").value);
-		const password = DOMPurify.sanizite(document.getElementById("password-login").value);
+		const email = DOMPurify.sanitize(document.getElementById("email-login").value);
+		const password = DOMPurify.sanitize(document.getElementById("password-login").value);
 		signInWithEmailAndPassword(auth, email, password);
 	} catch (error) {
 		console.error(error);
