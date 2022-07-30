@@ -84,6 +84,9 @@ html {
   font-size: 48px;
   margin-top: 48px;
   margin-bottom: 24px;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .settings-heading {
@@ -119,9 +122,13 @@ html {
   cursor: pointer;
 }
 
-.start-button, .login-button {
+.start-button, .login-button, .error-button {
   width: 80vw;
   margin: 0;
+}
+
+.error-button {
+  background: #f2542d !important;
 }
 
 .login-button {
@@ -281,6 +288,11 @@ html {
   left: 24px;
 }
 
+.error-message {
+  font-size: 24px;
+  text-align: center;
+}
+
 .back-settings {
   position: fixed;
   top: 32px;
@@ -367,6 +379,7 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow: hidden;
   border-radius: 10px;
   background: #a2d2ff;
   margin: 8px;
@@ -392,6 +405,8 @@ html {
   font-size: 16px;
   font-weight: 500;
   margin: 4px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .tag {

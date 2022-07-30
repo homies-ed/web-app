@@ -217,6 +217,9 @@ html
     @include heading($role: primary)
     margin-top: $base * 3
     margin-bottom: $base * 1.5
+    text-align: center
+    text-overflow: ellipsis
+    overflow: hidden 
 
 .settings-heading
     @include heading($role: primary)
@@ -236,9 +239,12 @@ html
     &:hover
         cursor: pointer 
 
-.start-button, .login-button 
+.start-button, .login-button , .error-button
     width: $wide
     margin: 0
+
+.error-button
+    background: $red !important
 
 .login-button
     margin-top: $base
@@ -318,6 +324,10 @@ html
 .back-zbieranina
     @include back-icon($page: zbieranina)
 
+.error-message
+    font-size: $base * 1.5
+    text-align: center 
+
 .back-settings
     @include back-icon($page: settings)
 
@@ -355,6 +365,7 @@ html
 
 .item
     @include lay-vertically
+    overflow: hidden
     border-radius: $rounded-image
     background: $light-blue
     margin: $base * 1/2
@@ -371,6 +382,8 @@ html
     font-size: $base 
     font-weight: $semi-bold
     margin: $base * 1/4
+    text-overflow: ellipsis
+    overflow: hidden 
 
 .tag 
     @include tag
