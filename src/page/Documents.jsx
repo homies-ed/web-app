@@ -2,6 +2,7 @@ import Menu from "../component/Menu";
 import Document from "../component/Document";
 import BackIcon from "../icon/BackIcon";
 
+// mock data
 const displayMaterials = (subject) => {
     try {
         const lessonName = localStorage.getItem("lesson");

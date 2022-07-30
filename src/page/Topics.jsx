@@ -5,12 +5,13 @@ import Novelist from "../icon/Novelist";
 import Bibliophile from "../icon/Bibliophile";
 import Mathematics from "../icon/Mathematics";
 
+// mock data 
 const displayTopics = (subject) => {
   try {
     let array = [];
 
     const polishTopics = ["Młoda Polska", "Średniowiecze", "Homer", "Horacy", "Jan Kochanowski"];
-    const mathTopics = ["Funkcja liniowa", "Trygonometria", "Rachunek prawdopodobieństwa", "Zdarzenia losowe", "Równania i nierówności"];
+    const mathTopics = ["Funkcja liniowa", "Trygonometria", "Prawdopodobieństwo", "Zdarzenia losowe", "Równania i nierówności"];
     const englishTopics = ["Czasy przyszłe", "Konstrukcje warunkowe", "Strona bierna", "False friends", "Idiomy"];
 
     let source = [];
