@@ -4,6 +4,8 @@ import Tile from "../component/Tile";
 import SmallTile from "../component/SmallTile";
 import ErrorModal from "../component/ErrorModal";
 
+localStorage.setItem("subject", "math");
+
 const rejectAccess = () => {
 	try {
 		if (getAuth().currentUser) return false;
