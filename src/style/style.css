@@ -176,21 +176,12 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.start {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 }
 
-.signup {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.signup .logo {
+.start .logo, .signup .logo {
   position: relative;
   top: 32px;
 }
@@ -456,6 +447,11 @@ html {
   font-size: 12px;
 }
 
+.error-message-container {
+  color: #f2542d;
+  margin-top: 8px;
+}
+
 .checkbox-container {
   margin: 24px;
   line-height: 150%;
@@ -486,6 +482,19 @@ html {
   border: 3px solid #3f37c9;
   min-height: 48px;
   min-width: 48px;
+}
+
+.input-error {
+  border-color: #f2542d;
+}
+
+.input-error::after {
+  opacity: 1;
+  content: "";
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f2542d;
 }
 
 ::-webkit-input-placeholder {

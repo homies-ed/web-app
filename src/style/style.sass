@@ -268,12 +268,7 @@ html
 .start, .signup
     @include display-fullscreen
     @include center-vertically
-
-.start
     justify-content: space-evenly
-    
-.signup
-    justify-content: space-between
 
     .logo
         position: relative
@@ -406,6 +401,10 @@ html
     font-weight: $normal
     font-size: $base * 3/4
 
+.error-message-container
+    color: $red 
+    margin-top: $base * 1/2
+
 .checkbox-container
     margin: $base * 3/2
     line-height: 150%
@@ -423,6 +422,17 @@ html
 // Inputs:
 .input 
     @include input
+
+.input-error
+    border-color: $red 
+
+    &::after
+        opacity: 1
+        content: "" 
+        width: $base * 1.5 
+        height: $base * 1.5 
+        border-radius: 50% 
+        background: $red 
 
 ::placeholder
     color: $dark-blue 

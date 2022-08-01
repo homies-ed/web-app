@@ -9,11 +9,44 @@ import VisibilityIcon from "../icon/VisibilityIcon";
 const auth = getAuth();
 auth.languageCode = "pl";
 
+const handleErrors = (error) => {
+	let errorMessage;
+
+	switch (error.code) {
+		case "auth/internal-error":
+			errorMessage = "Nastąpił nieoczekiwany błąd.";
+			break;
+
+		case "auth/invalid-email":
+			errorMessage = "Podany adres email jest nieprawidłowy.";
+			break;
+
+		case "auth/user-not-found":
+			errorMessage = "Nie znaleziono takiego użytkownika."
+			break;
+
+		case "auth/invalid-password":
+			errorMessage = "Podane hasło jest nieprawidłowe.";
+			break;
+
+		default:
+			errorMessage = "Wystąpił nieoczekiwany błąd.";
+	}
+
+	const errorMessageContainer = document.getElementById("error-message");
+	const THREE_SECONDS_IN_MS = 3000;
+
+	errorMessageContainer.innerHTML = errorMessage;
+	setTimeout(() => errorMessageContainer.innerHTML = "", THREE_SECONDS_IN_MS);
+}
+
 const emailLogin = () => {
 	try {
 		const email = DOMPurify.sanitize(document.getElementById("email-login").value);
 		const password = DOMPurify.sanitize(document.getElementById("password-login").value);
-		signInWithEmailAndPassword(auth, email, password);
+
+		signInWithEmailAndPassword(auth, email, password)
+			.catch(error => handleErrors(error));
 	} catch (error) {
 		console.error(error);
 	}
@@ -39,6 +72,7 @@ const Login = () => {
 					<div className="input password-bar">
 						<input type="password" id="password-login" className="password-login" placeholder="Hasło" tabIndex="0" required /><VisibilityIcon />
 					</div>
+					<span id="error-message" className="error-message-container"></span>
 					<input type="button" value="Zaloguj się" id="button-login" className="button login-button link" required onClick={emailLogin}/>
 				</form>
 			</article>

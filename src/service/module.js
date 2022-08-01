@@ -34,23 +34,20 @@ export const validateEmail = (email) => {
 
 export const validateCredentials = (nameRule, emailRule, passwordRule, permissions) => {
     try {
-        if (!nameRule) {
-            console.error("Nieprawdiłowe imię lub nazwisko lub pusty formularz"); 
-            return false;
-        }
-        if (!emailRule) {
-            console.error("Nieprawiłowy adres email lub hasło");
-            return false;
-        }
-        if (!passwordRule) {
-            console.error("Nieprawidłowe hasło");
-            return false;
-        }
-        if (!permissions) {
-            console.error("Nie zaakceptowano regulaminu i polityki prywatności");
-            return false;
-        }
-        return true;
+        if (!nameRule || !emailRule || !passwordRule || !permissions) return false;
+        else return true;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export const getErrorMessage = (nameRule, emailRule, passwordRule, permissions) => {
+    try {
+        if (!nameRule) return "Nieprawdiłowe imię lub nazwisko lub pusty formularz";
+        if (!emailRule) return "Nieprawiłowy adres email lub hasło";
+        if (!passwordRule) return "Nieprawidłowe hasło";
+        if (!permissions) return "Nie zaakceptowano regulaminu i polityki prywatności";
+        return;
     } catch (error) {
         console.error(error);
     }

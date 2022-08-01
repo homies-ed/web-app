@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged } from "firebase/auth";
-import { validateName, validateEmail, validatePassword, validateCredentials } from "../service/module";
+import { validateName, validateEmail, validatePassword, validateCredentials, getErrorMessage } from "../service/module";
 
 import Logo from "../component/Logo";
 import VisibilityIcon from "../icon/VisibilityIcon";
@@ -29,7 +29,14 @@ const getCredentials = () => {
     const validEmail = validateEmail(email);
     const validPassword = validatePassword(password);
 
-    if (validateCredentials(validName, validEmail, validPassword, checkbox)) createAccount(email, password, firstName, lastName);  
+    const errorMessage = document.getElementById("error-message");
+    const THREE_SECONDS_IN_MS = 3000;
+
+    if (validateCredentials(validName, validEmail, validPassword, checkbox)) createAccount(email, password, firstName, lastName);
+    else {
+      errorMessage.innerHTML = getErrorMessage();
+      setTimeout(() => errorMessage.innerHTML = "", THREE_SECONDS_IN_MS);
+    }
   } catch (error) {
     console.error(error);
   }
@@ -56,10 +63,11 @@ const SignUp = () => {
         <div className="input password-bar">
           <input type="password" id="password-sign-up" className="password-login" placeholder="Hasło" tabIndex="0" required /><VisibilityIcon />
         </div>
+        <span id="error-message" className="error-message-container"></span>
         <section className="confirmation">
           <span className="checkbox-container">
             <input type="checkbox" id="checkbox-signup" className="checkbox" tabIndex="0"/>
-            <label htmlFor="checkbox-signup" className="checkbox-label">Akceptuję <Link to="/regulamin" className="link">regulamin</Link> i <Link to="/polityka-prywatnosci" className="link">politykę prywatności</Link> HOMIES.</label>
+            <label htmlFor="checkbox-signup" className="checkbox-label">Akceptuję <Link to="/regulamin" className="link">regulamin</Link> i <Link to="/polityka-prywatnosci" className="link">politykę prywatności</Link> HOMIES.</label> 
           </span>  
           <button className="button" type="button" tabIndex="0" onClick={getCredentials}>Utwórz konto</button>
         </section>
