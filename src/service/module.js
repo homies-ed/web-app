@@ -41,6 +41,43 @@ export const validateCredentials = (nameRule, emailRule, passwordRule, permissio
     }
 }
 
+export const highlightInput = (nameRule, emailRule, passwordRule, permissions) => {
+    try {
+        if (!nameRule) {
+            document.getElementById("first-name-signup").classList.add("input-error");
+            document.getElementById("last-name-signup").classList.add("input-error");
+            
+            setTimeout(() => {
+                document.getElementById("first-name-signup").classList.remove("input-error");
+                document.getElementById("last-name-signup").classList.remove("input-error");
+            }, 3000);
+        }
+        if (!emailRule) {
+            document.getElementById("email-sign-up").classList.add("input-error");
+            
+            setTimeout(() => {
+                document.getElementById("email-sign-up").classList.remove("input-error");
+            }, 3000);
+        }
+        if (!passwordRule) {
+            document.getElementById("password-sign-up").classList.add("input-error");
+            
+            setTimeout(() => {
+                document.getElementById("password-sign-up").classList.remove("input-error");
+            }, 3000);
+        }
+        if (!permissions) {
+            document.getElementById("checkbox-signup").classList.add("input-error");
+            
+            setTimeout(() => {
+                document.getElementById("checkbox-signup").classList.remove("input-error");
+            }, 3000);
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 export const getErrorMessage = (nameRule, emailRule, passwordRule, permissions) => {
     try {
         if (!nameRule) return "Nieprawdiłowe imię lub nazwisko lub pusty formularz";

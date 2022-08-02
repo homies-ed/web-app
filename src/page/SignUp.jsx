@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged } from "firebase/auth";
-import { validateName, validateEmail, validatePassword, validateCredentials, getErrorMessage } from "../service/module";
+import { validateName, validateEmail, validatePassword, validateCredentials, getErrorMessage, highlightInput } from "../service/module";
 
 import Logo from "../component/Logo";
 import VisibilityIcon from "../icon/VisibilityIcon";
@@ -35,6 +35,7 @@ const getCredentials = () => {
     if (validateCredentials(validName, validEmail, validPassword, checkbox)) createAccount(email, password, firstName, lastName);
     else {
       errorMessage.innerHTML = getErrorMessage();
+      highlightInput(validName, validEmail, validPassword, checkbox);
       setTimeout(() => errorMessage.innerHTML = "", THREE_SECONDS_IN_MS);
     }
   } catch (error) {
@@ -42,7 +43,14 @@ const getCredentials = () => {
   }
 }
 
+const getAllInputs = () => {
+  const inputs = document.querySelectorAll("input");
+  console.log(inputs);
+}
+
 const SignUp = () => {
+  getAllInputs();
+  
   const navigate = useNavigate();
 
   onAuthStateChanged(getAuth(), (user) => {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import DOMPurify from "isomorphic-dompurify";
@@ -9,23 +9,35 @@ import VisibilityIcon from "../icon/VisibilityIcon";
 const auth = getAuth();
 auth.languageCode = "pl";
 
+const highlightInput = (id) => {
+	const input = document.getElementById(id);
+	input.classList.add("input-error");
+
+	const THREE_SECONDS_IN_MS = 3000;
+	setTimeout(() => input.classList.remove("input-error"), THREE_SECONDS_IN_MS);
+}
+
 const handleErrors = (error) => {
 	let errorMessage;
 
 	switch (error.code) {
 		case "auth/internal-error":
-			errorMessage = "Nastąpił nieoczekiwany błąd.";
+			errorMessage = "Nastąpił nieoczekiwany błąd.";	
+			highlightInput("email-login");
 			break;
 
 		case "auth/invalid-email":
 			errorMessage = "Podany adres email jest nieprawidłowy.";
+			highlightInput("email-login");
 			break;
 
 		case "auth/user-not-found":
-			errorMessage = "Nie znaleziono takiego użytkownika."
+			errorMessage = "Nie znaleziono takiego użytkownika.";
+			highlightInput("email-login");
 			break;
 
 		case "auth/invalid-password":
+			highlightInput("password-login");
 			errorMessage = "Podane hasło jest nieprawidłowe.";
 			break;
 
