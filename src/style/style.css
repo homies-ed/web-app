@@ -91,7 +91,6 @@ html {
 
 .settings-heading {
   max-width: 80vw;
-  font-size: 48px;
   -ms-flex-item-align: start;
       align-self: flex-start;
   margin-top: 96px;
@@ -472,6 +471,8 @@ html {
 }
 
 .input {
+  min-height: 48px;
+  min-width: 48px;
   font-weight: 700;
   font-family: 'Roboto', sans-serif;
   width: 80vw;
@@ -480,12 +481,10 @@ html {
   background-color: #ffffff;
   color: #3f37c9;
   border: 3px solid #3f37c9;
-  min-height: 48px;
-  min-width: 48px;
 }
 
 .input-error {
-  border-color: #f2542d;
+  border-color: #f2542d !important;
 }
 
 .input-error::after {
