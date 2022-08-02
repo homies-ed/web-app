@@ -77,7 +77,7 @@ const displayTopics = (subject) => {
 
 const Zbieranina = () => {
 	return (
-		<>{ rejectAccess() ? <ErrorModal /> : 
+		<> { rejectAccess() ? <ErrorModal /> : 
 			<article className="zbieranina">
 				<h1 className="secondary-heading zbieranina-heading" tabIndex="0">
 					{getUserName()}
@@ -93,7 +93,7 @@ const Zbieranina = () => {
 				{displayTopics(getSubject())}
 				<Menu />
 			</article>
-		}</>
+		} </>
 	);
 }
 
